@@ -1,5 +1,5 @@
 # ===================================================================================
-# FINAL CODE FOR FAMILY BUDGET APP WITH GOOGLE SHEETS DATABASE (v3 - FINAL)
+# FINAL CODE FOR FAMILY BUDGET APP WITH GOOGLE SHEETS DATABASE (v4 - FORCED SYNC)
 # ===================================================================================
 
 import streamlit as st
@@ -85,6 +85,7 @@ def save_data(df_to_save):
         worksheet.clear()
         # --- THIS IS THE FIX ---
         # Removed the 'include_sheet_name' argument to support the library version on Streamlit Cloud
+        # The line should look exactly like this:
         set_with_dataframe(worksheet, df_for_gsheet, include_index=False, resize=True)
         # ----------------------
         st.cache_data.clear()  # Clear the app's cache after saving new data
